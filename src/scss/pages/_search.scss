@@ -1,0 +1,36 @@
+.page--search {
+    
+    .page__posts {
+        padding-left: 0;
+
+        &::before {
+            display: none;
+        }
+
+        .post {
+            background-color: var(--color-white-transparent);
+
+
+            &__header {
+                &::before {
+                    display: none;
+                }
+            }
+
+            &__title {
+                margin-bottom: var(--gap-small);
+            }
+
+            &__type {
+                padding: 0.3rem 0.5rem;
+                border-radius: var(--border-radius-big);
+                background-color: var(--color-secondary-400);
+                display: inline-flex;
+                transform: translate(-0.5rem, -0.5rem);
+                font-size: 0.7rem;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+}
