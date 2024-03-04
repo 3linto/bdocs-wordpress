@@ -5,8 +5,10 @@
     padding: 0 32px;
     position: fixed;
     inset: 60px auto 0 0;
+    left: max(0px, calc(50% - 47rem));
     overflow-y: auto;
     display: grid;
+    align-content: start;
     background-color: var(--color-secondary-400);
 
     @include responsive.max(1024px) {
@@ -59,7 +61,7 @@ body.admin-bar .site-sidebar {
     }
 }
 
-.search {
+.site-sidebar .search {
     position: sticky;
     top: 0;
 
@@ -125,11 +127,7 @@ body.theme-light .search__button {
     background-color: transparent;
 }
 
-// responsiva läget, innan var det helt vitt när man sökte 
-body.search {
-    position: unset;
-    display: unset;
-}
+
 
 .search-modal {
     background-color: transparent;

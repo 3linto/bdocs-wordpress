@@ -50,10 +50,15 @@
         gap: 1.5rem;
     }
 
-    &__link {
+    &__link, &__list a {
         color: var(--color-text-dark);
         text-decoration: none;
         font-weight: 600;
+    }
+
+    &__list .current-menu-item a,
+    &__list .current_page-item a {
+        color: var(--color-accent-400);
     }
 
     &__close {

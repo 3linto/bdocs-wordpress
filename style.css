@@ -521,10 +521,13 @@ body.admin-bar .site-header {
   flex-direction: column;
   gap: 1.5rem;
 }
-.menu-responsive__link {
+.menu-responsive__link, .menu-responsive__list a {
   color: var(--color-text-dark);
   text-decoration: none;
   font-weight: 600;
+}
+.menu-responsive__list .current-menu-item a, .menu-responsive__list .current_page-item a {
+  color: var(--color-accent-400);
 }
 .menu-responsive__close {
   background: none;
@@ -719,8 +722,10 @@ body.admin-bar .menu-responsive {
   padding: 0 32px;
   position: fixed;
   inset: 60px auto 0 0;
+  left: max(0px, 50% - 47rem);
   overflow-y: auto;
   display: grid;
+  align-content: start;
   background-color: var(--color-secondary-400);
 }
 @media screen and (max-width: 1024px) {
@@ -773,22 +778,22 @@ body.admin-bar .site-sidebar {
   }
 }
 
-.search {
+.site-sidebar .search {
   position: sticky;
   top: 0;
 }
-.search::after {
+.site-sidebar .search::after {
   content: "";
   height: var(--gap-content);
   width: 100%;
   display: block;
   background: linear-gradient(180deg, var(--color-secondary-400) 0%, rgba(0, 0, 0, 0) 100%);
 }
-.search__container {
+.site-sidebar .search__container {
   padding-top: var(--section-gap-inner);
   background-color: var(--color-secondary-400);
 }
-.search__button {
+.site-sidebar .search__button {
   padding: 0.5rem 0.8rem;
   background-color: var(--color-white-transparent);
   border: 0;
@@ -803,28 +808,28 @@ body.admin-bar .site-sidebar {
   cursor: pointer;
 }
 @media (prefers-color-scheme: light) {
-  .search__button {
+  .site-sidebar .search__button {
     border: 1px solid var(--color-white-transparent);
     background-color: transparent;
   }
 }
-.search__button:hover {
+.site-sidebar .search__button:hover {
   background-color: var(--color-white-transparent-300);
 }
-.search__button svg {
+.site-sidebar .search__button svg {
   width: 1.25rem;
   stroke: var(--color-text-dark);
   margin-right: 0.5rem;
 }
-.search__button span {
+.site-sidebar .search__button span {
   white-space: nowrap;
 }
-.search__button span:last-of-type {
+.site-sidebar .search__button span:last-of-type {
   margin-left: auto;
   font-size: 0.75rem;
 }
 @media screen and (max-width: 1024px) {
-  .search {
+  .site-sidebar .search {
     display: none;
   }
 }
@@ -832,11 +837,6 @@ body.admin-bar .site-sidebar {
 body.theme-light .search__button {
   border: 1px solid var(--color-white-transparent);
   background-color: transparent;
-}
-
-body.search {
-  position: unset;
-  display: unset;
 }
 
 .search-modal {
@@ -899,9 +899,10 @@ body.search {
 }
 
 .site-content {
+  max-width: 90rem;
   display: grid;
   padding-left: 19rem;
-  margin-top: 60px;
+  margin: 60px auto 0;
 }
 @media screen and (max-width: 1024px) {
   .site-content {

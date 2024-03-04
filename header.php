@@ -35,13 +35,24 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </button>
-        <ul class="menu-responsive__list">
+        <?php 
+            
+            $args = [
+                'container'         => 'ul',           // Element wrapping the UL
+                'menu_class'        => 'menu-responsive__list',    // UL class
+                'theme_location'    => 'top_menu'
+            ];
+
+            wp_nav_menu( $args ) 
+            
+        ?>
+        <!-- <ul class="menu-responsive__list">
             <li class="menu-responsive__item"><a href="" class="menu-responsive__link">Docs</a></li>
             <li class="menu-responsive__item"><a href="" class="menu-responsive__link">Components</a></li>
             <li class="menu-responsive__item"><a href="" class="menu-responsive__link">Blog</a></li>
             <li class="menu-responsive__item"><a href="" class="menu-responsive__link">Showcase</a></li>
             <li class="menu-responsive__item"><a href="" class="menu-responsive__link">Github</a></li>
-        </ul>
+        </ul> -->
         <div class="menu-responsive__theme">
             <label for="theme-select">Switch theme</label>
             <div class="theme">
