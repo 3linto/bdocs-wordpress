@@ -995,6 +995,21 @@ body.theme-light .search__button {
   color: var(--color-primary-400);
 }
 
+.wpcf7 form .wpcf7-response-output {
+  color: var(--color-primary-400);
+  border-radius: var(--border-radius-big);
+  padding: 1rem 2rem;
+}
+
+.wpcf7-not-valid-tip {
+  font-size: var(--font-size-small);
+}
+
+textarea, input:not([type=submit], [type=checkbox], [type=radio]) {
+  background-color: var(--color-gray);
+  border: 1px solid var(--color-white-transparent);
+}
+
 .page__posts {
   margin-top: var(--gap-content);
   display: flex;
